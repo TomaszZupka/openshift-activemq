@@ -35,11 +35,11 @@
     </bean>
 	
 	<bean id="postgres-ds" class="org.postgresql.ds.PGPoolingDataSource">
-		<property name="serverName" value="192.168.1.101"/>
-		<property name="databaseName" value="activemq"/>
+		<property name="serverName" value="10.9.78.31"/>
+		<property name="databaseName" value="ezr"/>
 		<property name="portNumber" value="5432"/>
-		<property name="user" value="postgres"/>
-		<property name="password" value="postgres"/>
+		<property name="user" value="ezr"/>
+		<property name="password" value="DFG435tgsd<321.s"/>
 		<property name="dataSourceName" value="postgres"/>
 		<property name="initialConnections" value="15"/>
 		<property name="maxConnections" value="30"/>
