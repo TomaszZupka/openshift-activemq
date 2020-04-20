@@ -33,6 +33,17 @@
           lazy-init="false" scope="singleton"
           init-method="start" destroy-method="stop">
     </bean>
+	
+	<bean id="postgres-ds" class="org.postgresql.ds.PGPoolingDataSource">
+		<property name="serverName" value="192.168.1.101"/>
+		<property name="databaseName" value="activemq"/>
+		<property name="portNumber" value="5432"/>
+		<property name="user" value="postgres"/>
+		<property name="password" value="postgres"/>
+		<property name="dataSourceName" value="postgres"/>
+		<property name="initialConnections" value="15"/>
+		<property name="maxConnections" value="30"/>
+	</bean>
 
     <!--
         The <broker> element is used to configure the ActiveMQ broker.
@@ -84,17 +95,6 @@
 			<jdbcPersistenceAdapter dataDirectory="activemq-data"
 					dataSource="#postgres-ds" lockKeepAlivePeriod="0"/>
 		</persistenceAdapter>
-
-		<bean id="postgres-ds" class="org.postgresql.ds.PGPoolingDataSource">
-				<property name="serverName" value="192.168.1.101"/>
-				<property name="databaseName" value="activemq"/>
-				<property name="portNumber" value="5432"/>
-				<property name="user" value="postgres"/>
-				<property name="password" value="postgres"/>
-				<property name="dataSourceName" value="postgres"/>
-				<property name="initialConnections" value="15"/>
-				<property name="maxConnections" value="30"/>
-		</bean>
 
           <!--
             The systemUsage controls the maximum amount of space the broker will
