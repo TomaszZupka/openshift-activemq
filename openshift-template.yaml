@@ -80,7 +80,7 @@ objects:
     runPolicy: Serial
     source:
       git:
-        uri: https://github.com/natronq/openshift-activemq.git
+        uri: https://github.com/TomaszZupka/openshift-activemq
       type: Git
     strategy:
       type: Docker
