@@ -39,7 +39,7 @@
 		<property name="databaseName" value="ezr"/>
 		<property name="portNumber" value="5432"/>
 		<property name="user" value="ezr"/>
-		<property name="password" value="DFG435tgsd<321.s"/>
+		<property name="password" value="DFG435tgsd&lt;321.s"/>
 		<property name="dataSourceName" value="postgres"/>
 		<property name="initialConnections" value="15"/>
 		<property name="maxConnections" value="30"/>
