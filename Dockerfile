@@ -12,7 +12,7 @@ ENV ACTIVEMQ=apache-activemq-$ACTIVEMQ_VERSION
 COPY files/docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN set -x && \
-    curl -S http://archive.apache.org/dist/activemq/5.15.2/apache-activemq-5.15.2-bin.tar.gz | tar xvz -C /opt && \
+    curl -S http://artifactory.ci.warta.pl/artifactory/newezr-mvn-local/apache-activemq-5.15.2-bin.tar.gz | tar xvz -C /opt && \
     ln -s /opt/$ACTIVEMQ $ACTIVEMQ_HOME && \
     cd $ACTIVEMQ_HOME/lib/optional && \
     curl -O http://jdbc.postgresql.org/download/postgresql-$POSTGRES_JDBC_DRIVER_VERSION.jar && \    
