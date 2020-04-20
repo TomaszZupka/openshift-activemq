@@ -23,6 +23,7 @@ RUN set -x && \
     chmod +x /docker-entrypoint.sh
 
 COPY files/activemq.xml /opt/activemq/conf/activemq.xml
+COPY files/postgresql-9.4.1212.jar /opt/activemq/lib/postgresql-9.4.1212.jar
 
 WORKDIR $ACTIVEMQ_HOME
 
