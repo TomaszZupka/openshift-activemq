@@ -21,10 +21,7 @@ RUN set -x && \
     chmod go+rwX -R $ACTIVEMQ_HOME && \
     chmod +x /docker-entrypoint.sh
 
-RUN ls
-
 COPY files/activemq.xml /opt/activemq/conf/activemq.xml
-COPY postgresql-$POSTGRES_JDBC_DRIVER_VERSION.jar /opt/activemq/lib/postgresql-$POSTGRES_JDBC_DRIVER_VERSION.jar
 
 WORKDIR $ACTIVEMQ_HOME
 
