@@ -11,7 +11,7 @@ ENV ACTIVEMQ=apache-activemq-$ACTIVEMQ_VERSION
 COPY files/docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN set -x && \
-    curl -S $ARTIFACTORY/newezr-mvn-local/$ACTIVEMQ-bin.tar.gz | tar xvz -C /opt && \
+    curl -s -S $ARTIFACTORY/newezr-mvn-local/$ACTIVEMQ-bin.tar.gz | tar xvz -C /opt && \
     ln -s /opt/$ACTIVEMQ $ACTIVEMQ_HOME && \
     cd $ACTIVEMQ_HOME/lib/optional && \
     curl -O $ARTIFACTORY/jcenter-cache/org/postgresql/postgresql/$POSTGRES_JDBC_DRIVER_VERSION/postgresql-$POSTGRES_JDBC_DRIVER_VERSION.jar && \    
@@ -20,6 +20,8 @@ RUN set -x && \
     chown -h :0 $ACTIVEMQ_HOME && \
     chmod go+rwX -R $ACTIVEMQ_HOME && \
     chmod +x /docker-entrypoint.sh
+
+RUN ls
 
 COPY files/activemq.xml /opt/activemq/conf/activemq.xml
 COPY postgresql-$POSTGRES_JDBC_DRIVER_VERSION.jar /opt/activemq/lib/postgresql-$POSTGRES_JDBC_DRIVER_VERSION.jar
